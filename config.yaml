@@ -1,0 +1,26 @@
+system:
+  llm_model: "gemini-3.1-flash-lite"
+  graph_llm_model: "gemini-3.1-flash-lite"  # Keep this on flash/lite for free-tier limits!
+  graph_embedder: "gemini-embedding-001"
+  graphiti_semaphore_limit: 2        # CRITICAL: Prevents Graphiti from triggering 429 rate limits
+  sleep_between_tickers_sec: 15
+  max_retries: 3
+
+neo4j:
+  uri: "bolt://localhost:7687"
+  user: "neo4j"
+  # password in .env as NEO4J_PASSWORD
+
+edgar_client:
+  user_agent: "Odysseus_Portfolio_Agent (sathish@example.com)"
+  rate_limit_calls_per_sec: 10
+
+tickers:
+  - NVDA
+  - MSFT
+
+paths:
+  data_dir: "./data"
+  imports_dir: "./data/imports"
+  temp_filings_dir: "./data/temp_filings"
+  reports_dir: "./data/reports"

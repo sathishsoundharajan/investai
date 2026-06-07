@@ -1,0 +1,26 @@
+[project]
+name = "investai-agent"
+version = "0.1.0"
+requires-python = ">=3.11"
+dependencies = [
+    "google-genai",
+    "pydantic>=2.0",
+    "edgartools",
+    "yfinance",
+    "fredapi",
+    "tavily-python",
+    "python-dotenv",
+    "rich",
+    "pyyaml",
+    "graphiti-core[neo4j,google-genai]"
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "pytest-asyncio",
+    "pytest-mock",
+    "responses",
+    "ruff",
+    "mypy",
+]
